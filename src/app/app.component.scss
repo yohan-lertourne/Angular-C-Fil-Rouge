@@ -1,3 +1,6 @@
 app-main {
-    background-color: var(--color-1);
+    padding-top: 0.5%;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: background-image var(--transition-duration) linear;
 }

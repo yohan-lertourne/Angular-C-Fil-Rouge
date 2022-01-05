@@ -23,7 +23,18 @@
     --font-size-p:1.5em;
     --font-size-button:0.7em;
   
+    --icon-size: 5%;
+    --transition-duration : 2s;
+
     --borderRadius:5px;
     --height-nav-mobile:6vh;
     --white: whitesmoke;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-1);
 }
