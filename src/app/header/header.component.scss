@@ -1,3 +1,9 @@
 p {
-    background-color: blue;
+    background-color: var(--color-4);
+    color: var(--color-3);
+    flex-direction: row;
+    border: var(--color-5) solid 0.4vh;
+    align-items: center;
+    margin: auto;
+    margin-top: 0.9%;
 }
