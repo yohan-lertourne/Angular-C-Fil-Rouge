@@ -1,0 +1,19 @@
+.timeline_icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    transition: transform var(--transition-duration) ease-in-out;
+}
+
+@keyframes fade {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.timeline_icon_fade {
+    animation: fade var(--transition-duration) linear;
+}
+
+.timeline_icon_window_resize {
+    transition: none;
+}
