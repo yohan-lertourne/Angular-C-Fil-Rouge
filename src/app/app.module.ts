@@ -5,13 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
-import { TimelineComponent } from './main/timeline/timeline.component';
+import { TimelineComponent } from './main/story/timeline/timeline.component';
 import { StoryComponent } from './main/story/story.component';
-import { ChoicesListComponent } from './main/story/choices-list/choices-list.component';
-import { ChoiceComponent } from './main/story/choices-list/choice/choice.component';
-import { AnimatedFaceComponent } from './main/animated-face/animated-face.component';
+import { ChoicesListComponent } from './main/story/step/choices-list/choices-list.component';
+import { ChoiceComponent } from './main/story/step/choices-list/choice/choice.component';
+import { AnimatedFaceComponent } from './main/story/animated-face/animated-face.component';
 import { ContactComponent } from './main/contact/contact.component';
-import { TextComponent } from './main/story/text/text.component';
+import { TextComponent } from './main/story/step/text/text.component';
+import { StepComponent } from './main/story/step/step.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TextComponent } from './main/story/text/text.component';
     ChoiceComponent,
     AnimatedFaceComponent,
     ContactComponent,
-    TextComponent
+    TextComponent,
+    StepComponent
   ],
   imports: [
     BrowserModule,
