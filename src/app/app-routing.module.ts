@@ -4,9 +4,11 @@ import { StepComponent } from './main/story/step/step.component';
 import { StoryComponent } from './main/story/story.component';
 
 const routes: Routes = [
-  { path: 'story', component: StoryComponent, children: [
-    { path: 'step:id', component: StepComponent }
-  ]}
+  {
+    path: 'story', component: StoryComponent, children: [
+      { path: 'step:id', component: StepComponent }
+    ]
+  }
 ];
 
 @NgModule({
