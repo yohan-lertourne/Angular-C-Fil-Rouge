@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
-import { TimelineComponent } from './main/story/timeline/timeline.component';
+import { TimelineComponent } from './main/timeline/timeline.component';
 import { StoryComponent } from './main/story/story.component';
 import { ChoicesListComponent } from './main/story/step/choices-list/choices-list.component';
 import { ChoiceComponent } from './main/story/step/choices-list/choice/choice.component';
