@@ -15,9 +15,10 @@ export class StepComponent implements OnInit {
 
   ngOnInit(): void {
     this.step = this.StepsService.getStepById(1) as Step;
+    this.Observe();
   }
 
   public Observe() {
-  this.StepsService.subject.next(1);
+    this.StepsService.subject.next(1);
   }
 }
