@@ -353,4 +353,12 @@ export class StepsService {
             choices: []
         }
     ]
+
+    getStepById(id: number): Step | null {
+        let step: Step | null = null;
+        this.steps.forEach((element: Step) => {
+            if (element.id === id) step = element;
+        });
+        return step;
+    }
 }
