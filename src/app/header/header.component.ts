@@ -11,7 +11,13 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigateByUrl("");
   }
 
+  public Home() {
+    this.router.navigateByUrl("story/step");
+  }
+
+  public Contact() {
+    this.router.navigateByUrl("contact");
+  }
 }
