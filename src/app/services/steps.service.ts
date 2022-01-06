@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Step } from '../models/step.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class StepsService {
+
+    subject = new Subject<number>();
+    
     steps: Step[] = [
         {
             id: 1,
