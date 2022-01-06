@@ -19,6 +19,6 @@ export class StepComponent implements OnInit {
   }
 
   public Observe() {
-    this.StepsService.subject.next(1);
+    this.StepsService.subject.next(this.step.id);
   }
 }
