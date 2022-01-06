@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('./reset.scss');
 :root {
     --url-font-1: url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap');
     --font-1:var(--url-font-1)'Libre Baskerville', serif;
