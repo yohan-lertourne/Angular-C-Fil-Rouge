@@ -10,6 +10,7 @@ nav{
 nav ul {
     list-style-type: none;
     display: flex;
+    margin: 0;
 }
 
 nav ul li {
@@ -18,7 +19,7 @@ nav ul li {
     border: var(--color-5) solid 0.4vh;
     align-items: center;
     margin: auto;
-    margin-top: 0.9%;
+    margin-top: 0.5%;
 
 }
 
@@ -27,11 +28,12 @@ li a {
     color: var(--color-3);
     font-size: var(--font-size-h1);
     font-family: var(--font-1);
+    margin-top: -10%;
 }
 
 #liH1{
     border-style: none;
-    font-size: var(--font-size-h1);
+    font-size: var(--font-size-p);
     font-family: var(--font-1);
     color: var(--white);
     margin-top: -1.5%;
@@ -42,10 +44,6 @@ li:hover{
     border: var(--color-3) solid 0.4vh;
 }
 
-#home:hover{
-    color: var(--white);
-}
-
-#contact-Modal:hover{
+.whitehover:hover{
     color: var(--white);
 }
