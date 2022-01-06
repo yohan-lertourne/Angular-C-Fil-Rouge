@@ -2,11 +2,44 @@
     background-color: var(--color-4);
 }
 
-p { 
+nav{
+    background-color: var(--color-4);
+    height: 6vh;   
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
     color: var(--color-3);
     flex-direction: row;
     border: var(--color-5) solid 0.4vh;
     align-items: center;
     margin: auto;
     margin-top: 0.9%;
+
+}
+
+li a {
+    text-decoration: none;
+    color: var(--color-3);
+    font-size: var(--font-size-h1);
+    font-family: var(--font-1);
+}
+
+#liH1{
+    border-style: none;
+    font-size: var(--font-size-h1);
+    font-size: var(--font-size-h1);
+    font-family: var(--font-1);
+}
+
+li:hover{ 
+    background-color: var(--color-3);
+    border: var(--color-3) solid 0.4vh;
+}
+a:hover{
+    color: var(--white);
 }
