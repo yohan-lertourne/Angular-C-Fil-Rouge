@@ -1,4 +1,25 @@
 .choice-list {
+    width: 95%;
+    margin: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+app-choice {
+    width: 50%;
+    margin: 1%;
+    padding: 1% 3%;
+    border: 1px groove var(--color-2);
+}
+
+app-choice:hover{
+    cursor: url("../../../../../assets/img/icons/logo.png"), pointer;
+    transform: translate(1%, 1%) ;
+    border-style: groove outset ;
+    background-color: var(--color-2); 
+}
+
+app-choice:last-child {
+    margin-bottom: 5%;
 }
