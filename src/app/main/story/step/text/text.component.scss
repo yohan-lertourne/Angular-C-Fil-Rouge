@@ -1,0 +1,28 @@
+.text {
+    width: 80%;
+}
+
+p {
+    position: relative;
+    width: 80%;
+    margin: 2% 5%;
+    padding: 30px;
+    border: solid var(--color-5) 1px;
+    border-radius: 35px;
+    background-color: var(--color-5);
+    font-family: var(--font-P);
+    font-size: 1.6em;
+    color: var(--white);
+    text-align: center;
+}
+
+p:before {
+    content: '';
+    position: absolute;
+    top: 2.5m;
+    left: -1em;
+    border-top: 20px solid transparent;
+    border-right: 20px solid var(--color-5);
+    border-bottom: 20px solid var(--color-5);
+    border-left: 20px solid transparent;
+}
