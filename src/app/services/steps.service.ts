@@ -352,7 +352,7 @@ export class StepsService {
             },
             choices: []
         }
-    ]
+    ];
 
     getStepById(id: number): Step | null {
         let step: Step | null = null;
