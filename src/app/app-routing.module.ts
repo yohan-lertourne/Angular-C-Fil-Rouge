@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainComponent } from './main/main.component';
+import { StepComponent } from './main/story/step/step.component';
+import { StoryComponent } from './main/story/story.component';
 
 const routes: Routes = [
-  {path: '', component: MainComponent}
+  {
+    path: 'story', component: StoryComponent, children: [
+      { path: 'step', component: StepComponent }
+    ]
+  }
 ];
 
 @NgModule({

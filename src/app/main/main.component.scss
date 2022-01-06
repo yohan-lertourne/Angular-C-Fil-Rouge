@@ -1,0 +1,7 @@
+.main {
+    padding-top: 0.5%;
+    background: url('../../assets/img/backgrounds/duck.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    transition: background-image var(--transition-duration) linear;
+}

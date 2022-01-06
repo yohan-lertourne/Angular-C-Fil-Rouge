@@ -10,6 +10,7 @@ export class AnimatedFaceComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
