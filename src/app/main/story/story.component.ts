@@ -11,7 +11,7 @@ export class StoryComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigate(['/story/step']);
+    this.router.navigate(['/story/steps/1']);
   }
 
 }

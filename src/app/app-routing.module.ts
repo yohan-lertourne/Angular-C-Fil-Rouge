@@ -7,7 +7,7 @@ import { StoryComponent } from './main/story/story.component';
 const routes: Routes = [
   {
     path: 'story', component: StoryComponent, children: [
-      { path: 'step', component: StepComponent }
+      { path: 'steps/:id', component: StepComponent }
     ]},
     {
       path: 'contact', component: ContactComponent
