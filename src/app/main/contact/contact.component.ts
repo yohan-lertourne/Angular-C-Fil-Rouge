@@ -12,4 +12,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
   
+  onClose() {
+    document.getElementById('dialog')?.classList.add('hide');
+  }
 }

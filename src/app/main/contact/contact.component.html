@@ -1,7 +1,7 @@
-<div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-modal="true" aria-hidden="true" class="c-dialog">
+<div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-modal="true" aria-hidden="true" class="c-dialog hide">
   <div role="document" class="c-dialog__box js-modal-stop">
     <button id="modal-close" type="button" aria-label="Fermer" title="Fermer cette fenêtre modale"
-      data-dismiss="dialog">Fermer
+      data-dismiss="dialog" (click)="onClose()">Fermer
     </button>
     <h2 id="dialog-title">Envoyez nous vos idées d'histoire ou nous contacter tout simplement.</h2>
     <form action="mailto:hauspie.guillaume@free.fr" method="post">
