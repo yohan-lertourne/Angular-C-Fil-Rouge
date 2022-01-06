@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +7,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  public Home() {
-    this.router.navigateByUrl("story/step");
-  }
-
-  public Contact() {
-    this.router.navigateByUrl("contact");
+  public onContact() {
+    document.getElementById('dialog')?.classList.remove('hide');
   }
 }
