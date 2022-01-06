@@ -10,11 +10,11 @@ import { StepsService } from 'src/app/services/steps.service';
 export class StepComponent implements OnInit {
 
   step!: Step;
-  constructor(private StepsService: StepsService) {}
+
+  constructor(private StepsService: StepsService) { }
 
   ngOnInit(): void {
-    this.step=this.StepsService.getStepById(1) as Step;
-    console.log(this.step);
+    this.step = this.StepsService.getStepById(1) as Step;
   }
 
 }
