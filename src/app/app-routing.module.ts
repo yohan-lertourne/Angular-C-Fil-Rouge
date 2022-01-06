@@ -5,12 +5,11 @@ import { StepComponent } from './main/story/step/step.component';
 import { StoryComponent } from './main/story/story.component';
 
 const routes: Routes = [
+  { path: 'contact', component: ContactComponent },
   {
     path: 'story', component: StoryComponent, children: [
       { path: 'steps/:id', component: StepComponent }
-    ]},
-    {
-      path: 'contact', component: ContactComponent
+    ]
   }
 ];
 
