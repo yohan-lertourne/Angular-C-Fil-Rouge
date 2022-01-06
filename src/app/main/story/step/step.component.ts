@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Step } from 'src/app/models/step.model';
+import { StepsService } from 'src/app/services/steps.service';
 
 @Component({
   selector: 'app-step',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepComponent implements OnInit {
 
-  constructor() { }
+  step!: Step;
+  constructor(private StepsService: StepsService) {}
 
   ngOnInit(): void {
+    this.step=this.StepsService.getStepById(1) as Step;
+    console.log(this.step);
   }
 
 }
