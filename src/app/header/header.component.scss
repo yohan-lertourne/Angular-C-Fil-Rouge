@@ -32,14 +32,20 @@ li a {
 #liH1{
     border-style: none;
     font-size: var(--font-size-h1);
-    font-size: var(--font-size-h1);
     font-family: var(--font-1);
+    color: var(--white);
+    margin-top: -1.5%;
 }
 
 li:hover{ 
     background-color: var(--color-3);
     border: var(--color-3) solid 0.4vh;
 }
-a:hover{
+
+#home:hover{
+    color: var(--white);
+}
+
+#contact-Modal:hover{
     color: var(--white);
 }
