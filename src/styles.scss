@@ -32,7 +32,6 @@
     --white: whitesmoke;
 }
 
-body {
-    background-color: var(--color-1);
+html, body, .root, .main {
+    height: -webkit-fill-available;
 }
-
