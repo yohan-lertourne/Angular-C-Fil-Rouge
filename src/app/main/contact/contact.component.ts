@@ -20,7 +20,6 @@ export class ContactComponent implements OnInit {
   ClickedOut(event:any) {
     if(event.target.className === "c-dialog") {
       this.onClose();
-      console.log("testfoireux")
     } 
  }
 }
