@@ -22,4 +22,5 @@ export class HeaderComponent implements OnInit {
   onContact() {
     document.getElementById('dialog')?.classList.remove('hide');
   }
+  
 }
