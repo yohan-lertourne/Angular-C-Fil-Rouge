@@ -15,13 +15,14 @@ export class StepComponent implements OnInit {
   constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let id = +this.activeRoute.snapshot.params['id'];
-    this.step = this.StepsService.getStepById(id) as Step;
-    this.Observe();
+    this.activeRoute.params.subscribe(() => {
+      let id = +this.activeRoute.snapshot.params['id'];
+      this.step = this.StepsService.getStepById(id) as Step;
+      this.Observe();
+    });
   }
 
-  public Observe() {
+  Observe(): void {
     this.StepsService.subject.next(this.step.id);
   }
-
 }
