@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Step } from 'src/app/models/step.model';
 import { StepsService } from 'src/app/services/steps.service';
 
@@ -28,7 +27,7 @@ export class TimelineComponent implements OnInit {
     })
   };
 
-  constructor(private stepsservice: StepsService, private activeRoute: ActivatedRoute) { }
+  constructor(private stepsservice: StepsService) { }
 
   ngOnInit(): void {
     this.setInitialTimes();
