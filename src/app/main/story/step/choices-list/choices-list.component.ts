@@ -7,11 +7,11 @@ import { Choice } from 'src/app/models/choice.model';
   styleUrls: ['./choices-list.component.scss']
 })
 export class ChoicesListComponent implements OnInit {
+  
   @Input() choices!: Choice[];
  
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
