@@ -17,6 +17,6 @@ export class TimelineComponent implements OnInit {
   constructor(private stepsservice: StepsService) { }
 
   ngOnInit(): void {
-    this.stepsservice.subject.subscribe(this.myObserver)
+    this.stepsservice.subject.subscribe(this.myObserver);
   }
 }
