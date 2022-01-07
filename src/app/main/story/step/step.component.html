@@ -1,4 +1,4 @@
 <div class="step">
     <app-text [text] ="this.step.story"></app-text>
-    <app-choices-list [choices] = "this.step.choices"></app-choices-list>
+    <app-choices-list [choices] = "this.step.choices" (click)="test()"></app-choices-list>
 </div>

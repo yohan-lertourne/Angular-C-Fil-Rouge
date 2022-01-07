@@ -21,4 +21,10 @@ export class StepComponent implements OnInit {
   public Observe() {
     this.StepsService.subject.next(this.step.id);
   }
+
+  public test() {
+    this.step.id = this.step.id + 1;
+    this.StepsService.subject.next(this.step.id);
+    console.log("step" + this.step.id)
+  }
 }

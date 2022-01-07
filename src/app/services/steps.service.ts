@@ -21,7 +21,7 @@ export class StepsService {
                 name: "night",
                 background: "../../../assets/img/backgrounds/night.jpg",
                 icon: {
-                    src: "../../assests/img/icons/night.png",
+                    src: "../../assets/img/icons/night.png",
                     alt: "Icône de lune",
                     author: "Made by Vectors Market from www.flaticon.com"
                 }
@@ -50,9 +50,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 08:00:00"),
             theme: {
                 name: "rain",
-                background: "../../assests/img/backgrounds/rain.jpg",
+                background: "../../assets/img/backgrounds/rain.jpg",
                 icon: {
-                    src: "../../assests/img/icons/rain.png",
+                    src: "../../assets/img/icons/rain.png",
                     alt: "Icône de pluie",
                     author: "Made by Konkapp from www.flaticon.com"
                 }
@@ -81,9 +81,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 08:55:00"),
             theme: {
                 name: "dark_clouds",
-                background: "../../assests/img/backgrounds/dark_clouds.jpg",
+                background: "../../assets/img/backgrounds/dark_clouds.jpg",
                 icon: {
-                    src: "../../assests/img/icons/dark_clouds.png",
+                    src: "../../assets/img/icons/dark_clouds.png",
                     alt: "Icône de nuages sombres",
                     author: "Made by Freepik from www.flaticon.com"
                 }
@@ -112,9 +112,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 09:00:00"),
             theme: {
                 name: "school",
-                background: "../../assests/img/backgrounds/school.jpg",
+                background: "../../assets/img/backgrounds/school.jpg",
                 icon: {
-                    src: "../../assests/img/icons/school.png",
+                    src: "../../assets/img/icons/school.png",
                     alt: "Icône d'écran d'ordinateur",
                     author: "Made by Kerismaker from www.flaticon.com"
                 }
@@ -143,9 +143,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 12:00:00"),
             theme: {
                 name: "sandwich",
-                background: "../../assests/img/backgrounds/sandwich.jpg",
+                background: "../../assets/img/backgrounds/sandwich.jpg",
                 icon: {
-                    src: "../../assests/img/icons/sandwich.png",
+                    src: "../../assets/img/icons/sandwich.png",
                     alt: "Icône de sandwich",
                     author: "Made by Freepik from www.flaticon.com"
                 }
@@ -174,9 +174,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 15:00:00"),
             theme: {
                 name: "sun",
-                background: "../../assests/img/backgrounds/sun.jpg",
+                background: "../../assets/img/backgrounds/sun.jpg",
                 icon: {
-                    src: "../../assests/img/icons/sun.png",
+                    src: "../../assets/img/icons/sun.png",
                     alt: "Icône de soleil",
                     author: "Made by Freepik from www.flaticon.com"
                 }
@@ -205,9 +205,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 17:00:00"),
             theme: {
                 name: "duck",
-                background: "../../assests/img/backgrounds/duck.jpg",
+                background: "../../assets/img/backgrounds/duck.jpg",
                 icon: {
-                    src: "../../assests/img/icons/duck.png",
+                    src: "../../assets/img/icons/duck.png",
                     alt: "Icône de canard",
                     author: "Made by Smashingstocksfrom www.flaticon.com"
                 }
@@ -236,9 +236,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 19:00:00"),
             theme: {
                 name: "highway",
-                background: "../../assests/img/backgrounds/highway.jpg",
+                background: "../../assets/img/backgrounds/highway.jpg",
                 icon: {
-                    src: "../../assests/img/icons/highway.png",
+                    src: "../../assets/img/icons/highway.png",
                     alt: "Icône de voiture",
                     author: "Made by Freepik from www.flaticon.com"
                 }
@@ -267,9 +267,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 20:30:00"),
             theme: {
                 name: "night_studying",
-                background: "../../assests/img/backgrounds/night_studying.jpg",
+                background: "../../assets/img/backgrounds/night_studying.jpg",
                 icon: {
-                    src: "../../assests/img/icons/night_studying.png",
+                    src: "../../assets/img/icons/night_studying.png",
                     alt: "Icône de livres avec lampe de chevet",
                     author: "Made by Prosymbols from www.flaticon.com"
                 }
@@ -298,9 +298,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 22:00:00"),
             theme: {
                 name: "night",
-                background: "../../assests/img/backgrounds/night.jpg",
+                background: "../../assets/img/backgrounds/night.jpg",
                 icon: {
-                    src: "../../assests/img/icons/night.png",
+                    src: "../../assets/img/icons/night.png",
                     alt: "Icône de lune",
                     author: "Made by Vectors Market from www.flaticon.com"
                 }
@@ -329,9 +329,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 22:00:00"),
             theme: {
                 name: "night",
-                background: "../../assests/img/backgrounds/night.jpg",
+                background: "../../assets/img/backgrounds/night.jpg",
                 icon: {
-                    src: "../../assests/img/icons/night.png",
+                    src: "../../assets/img/icons/night.png",
                     alt: "Icône de lune",
                     author: "Made by Vectors Market from www.flaticon.com"
                 }
@@ -347,9 +347,9 @@ export class StepsService {
             hour: new Date("November 22, 2021 22:00:00"),
             theme: {
                 name: "death",
-                background: "../../assests/img/backgrounds/death.jpg",
+                background: "../../assets/img/backgrounds/death.jpg",
                 icon: {
-                    src: "../../assests/img/icons/death.png",
+                    src: "../../assets/img/icons/death.png",
                     alt: "Icône de mort",
                     author: "Made by Freepik from www.flaticon.com"
                 }
