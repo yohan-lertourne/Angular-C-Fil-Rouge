@@ -9,6 +9,14 @@ export class StepsService {
 
     subject = new Subject<number>();
     
+    getStepById(id: number): Step | null {
+        let step: Step | null = null;
+        this.steps.forEach((element: Step) => {
+            if (element.id === id) step = element;
+        });
+        return step;
+    }
+
     steps: Step[] = [
         {
             id: 1,
@@ -356,13 +364,5 @@ export class StepsService {
             },
             choices: []
         }
-    ];
-
-    getStepById(id: number): Step | null {
-        let step: Step | null = null;
-        this.steps.forEach((element: Step) => {
-            if (element.id === id) step = element;
-        });
-        return step;
-    }
+    ];  
 }
