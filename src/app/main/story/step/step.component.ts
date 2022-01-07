@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Step } from 'src/app/models/step.model';
 import { StepsService } from 'src/app/services/steps.service';
 
@@ -11,10 +12,11 @@ export class StepComponent implements OnInit {
 
   step!: Step;
 
-   constructor(private StepsService: StepsService) { }
+  constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.step = this.StepsService.getStepById(1) as Step;
+    let id = +this.activeRoute.snapshot.params['id'];
+    this.step = this.StepsService.getStepById(id) as Step;
     this.Observe();
   }
 
