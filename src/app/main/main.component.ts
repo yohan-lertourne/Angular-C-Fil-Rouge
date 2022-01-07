@@ -22,6 +22,6 @@ export class MainComponent implements OnInit {
   loadBackgroundImage(id: number) {
     let main = document.getElementsByClassName('main')[0] as HTMLElement;
     let step = this.stepsservice.getStepById(id) as Step;
-    main.style.backgroundImage =  `url(${step.theme.background})`;
+    main.style.backgroundImage = `url(${step.theme.background})`;
   }
 }

@@ -19,7 +19,7 @@ export class StepsService {
             hour: new Date("November 22, 2021 07:00:00"),
             theme: {
                 name: "night",
-                background: "../../../assets/img/icons/night.jpg",
+                background: "../../../assets/img/backgrounds/night.jpg",
                 icon: {
                     src: "../../assests/img/icons/night.png",
                     alt: "Icône de lune",
