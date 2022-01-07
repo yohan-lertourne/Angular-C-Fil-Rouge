@@ -12,17 +12,22 @@ export class TimelineComponent implements OnInit {
   start_time!: number;
   total_duration!: number;
 
-  timeline = document.getElementById("timeline") as HTMLElement;
-  timeline_icon = document.getElementsByClassName("timeline_icon")[0] as HTMLImageElement;
+  timeline!: HTMLElement;
+  timeline_icon!: HTMLImageElement;
 
   myObserver = {
-    next: ((id: number) => { this.changeIconPosition(id); this.loadIcon(id, true); })
+    next: ((id: number) => {
+      this.changeIconPosition(id);
+      this.loadIcon(id, id !== 1);
+    })
   };
 
   constructor(private stepsservice: StepsService) { }
 
   ngOnInit(): void {
     this.setInitialTimes();
+    this.timeline = document.getElementsByClassName('timeline')[0] as HTMLElement;
+    this.timeline_icon = document.getElementsByClassName("timeline_icon")[0] as HTMLImageElement;
     this.stepsservice.subject.subscribe(this.myObserver);
   }
 
