@@ -1,4 +1,4 @@
-<div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-modal="true" aria-hidden="true" class="c-dialog hide">
+<div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-modal="true" aria-hidden="true" class="c-dialog hide" appOutside (click)="ClickedOut($event)">
   <div role="document" class="c-dialog__box js-modal-stop">
     <button id="modal-close" type="button" aria-label="Fermer" title="Fermer cette fenêtre modale"
       data-dismiss="dialog" (click)="onClose()">Fermer

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  dialog = <HTMLElement> document.getElementById('dialog');
   constructor() { }
 
   ngOnInit(): void {
@@ -15,4 +16,11 @@ export class ContactComponent implements OnInit {
   onClose() {
     document.getElementById('dialog')?.classList.add('hide');
   }
+  
+  ClickedOut(event:any) {
+    if(event.target.className === "c-dialog") {
+      this.onClose();
+      console.log("testfoireux")
+    } 
+ }
 }
