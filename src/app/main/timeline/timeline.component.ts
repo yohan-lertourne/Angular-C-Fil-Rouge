@@ -63,19 +63,19 @@ export class TimelineComponent implements OnInit {
 
   loadIcon(is_fading: boolean): void {
     let icon = this.step.theme.icon;
-    this.timeline_icon.setAttribute('alt', icon.alt);
+    this.timeline_icon.alt = icon.alt;
     this.timeline_icon.setAttribute('author', icon.author);
     if (is_fading) {
       this.timeline_icon.classList.add('timeline_icon_fade');
-      setTimeout(() => this.timeline_icon.setAttribute('src', icon.src), 1000);
+      setTimeout(() => this.timeline_icon.src = icon.src, 1000);
       setTimeout(() => this.timeline_icon.classList.remove('timeline_icon_fade'), 2000);
     }
-    else this.timeline_icon.setAttribute('src', icon.src);
+    else this.timeline_icon.src = icon.src;
   }
 
   changeIconPosition(): void {
     let time = this.parseTime(`${this.step.hour.getHours()}:${this.step.hour.getMinutes()}`) - this.start_time;
     let icon_position = (this.timeline.offsetWidth - this.timeline_icon.offsetWidth - parseInt(getComputedStyle(this.timeline).padding.split('px')[0]) * 2) * (time / this.total_duration);
-    this.timeline_icon.setAttribute('style', `transform: translate(${icon_position}px)`);
+    this.timeline_icon.style.transform = `translate(${icon_position}px)`;
   }
 }
