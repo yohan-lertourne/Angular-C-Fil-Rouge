@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Choice } from 'src/app/models/choice.model';
 import { StepsService } from 'src/app/services/steps.service';
@@ -8,14 +8,11 @@ import { StepsService } from 'src/app/services/steps.service';
   templateUrl: './choice.component.html',
   styleUrls: ['./choice.component.scss']
 })
-export class ChoiceComponent implements OnInit {
+export class ChoiceComponent  {
 
   @Input() choice!: Choice;
 
   constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute, private router: Router) { }
-
-  ngOnInit(): void {
-  }
 
   onChoice(): void {
     let next_id = +this.activeRoute.snapshot.params['id'] + 1;

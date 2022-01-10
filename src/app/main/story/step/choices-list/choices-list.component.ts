@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Choice } from 'src/app/models/choice.model';
 
 @Component({
@@ -6,12 +6,8 @@ import { Choice } from 'src/app/models/choice.model';
   templateUrl: './choices-list.component.html',
   styleUrls: ['./choices-list.component.scss']
 })
-export class ChoicesListComponent implements OnInit {
+export class ChoicesListComponent {
   
   @Input() choices!: Choice[];
- 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 }
