@@ -20,7 +20,7 @@ export class ChoiceComponent implements OnInit {
   onChoice(): void {
     let next_id = +this.activeRoute.snapshot.params['id'] + 1;
     switch (this.choice.id) {
-      case 2:
+      case 1:
         this.StepsService.subject.next(next_id);
         this.router.navigate(['/story/steps/', next_id, { additional: true }]);
         break;
