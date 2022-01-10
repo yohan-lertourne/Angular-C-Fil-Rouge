@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { StepsService } from '../services/steps.service';
 
@@ -7,12 +7,9 @@ import { StepsService } from '../services/steps.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(private stepsservice: StepsService, private router: Router) { }
-
-  ngOnInit(): void {
-  }
 
   onHome(): void {
     this.stepsservice.subject.next(1);
