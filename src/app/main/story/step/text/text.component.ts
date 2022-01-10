@@ -20,13 +20,13 @@ export class TextComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.container = document.getElementsByClassName('text')[0].firstElementChild as Element;
     this.sub = this.activeRoute.params.subscribe(() => {
       this.writeText();
     });
   }
 
   writeText(): void {
-    this.container = document.getElementsByClassName('text')[0].firstElementChild as Element;
     this.container.innerHTML = '';
     this.index = 0;
     clearInterval(this.timer);

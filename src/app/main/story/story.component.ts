@@ -13,5 +13,4 @@ export class StoryComponent implements OnInit {
   ngOnInit(): void {
     this.router.navigate(['/story/steps/1']);
   }
-
 }

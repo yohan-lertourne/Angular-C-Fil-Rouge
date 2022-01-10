@@ -8,7 +8,7 @@ import { StepsService } from 'src/app/services/steps.service';
   templateUrl: './choice.component.html',
   styleUrls: ['./choice.component.scss']
 })
-export class ChoiceComponent  {
+export class ChoiceComponent {
 
   @Input() choice!: Choice;
 

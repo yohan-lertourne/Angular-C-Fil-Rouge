@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -7,16 +7,16 @@ import { Component} from '@angular/core';
 })
 export class ContactComponent {
 
-  dialog = <HTMLElement> document.getElementById('dialog');
+  dialog = <HTMLElement>document.getElementById('dialog');
   constructor() { }
-  
+
   onClose() {
     document.getElementById('dialog')?.classList.add('hide');
   }
-  
-  ClickedOut(event:any) {
-    if(event.target.className === "c-dialog") {
+
+  ClickedOut(event: any) {
+    if (event.target.className === "c-dialog") {
       this.onClose();
-    } 
- }
+    }
+  }
 }
