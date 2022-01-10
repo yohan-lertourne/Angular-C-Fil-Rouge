@@ -1,27 +1,9 @@
 .choice-list {
     width: 95%;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-app-choice {
-    width: 80%;
-    margin: 1%;
-    padding: 1% 3%;
-    border: 1px groove var(--color-2);
-    font-family: var(--font-P);
-    font-size: 1.3em;
-}
-
-app-choice:hover{
-    cursor: url("../../../../../assets/img/icons/logo.png"), pointer;
-    transform: translate(1%, 1%) ;
-    border-style: groove outset ;
-    background-color: var(--color-2); 
-}
-
-app-choice:last-child {
-    margin-bottom: 5%;
+    app-choice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -30,6 +30,10 @@ export class TextComponent implements OnInit {
     this.container.innerHTML = '';
     this.index = 0;
     clearInterval(this.timer);
-    this.timer = setInterval(() => { if (this.index < this.text.length) { this.container.innerHTML += this.text[this.index++]; } }, 42);
+    this.timer = setInterval(() => {
+      if (this.index < this.text.length) {
+        this.container.innerHTML += this.text[this.index++];
+      }
+    }, 42);
   }
 }
