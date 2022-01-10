@@ -14,6 +14,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onHome(): void {
+    this.stepsservice.subject.next(1);
+    this.router.navigate(['/story/steps/', 1]);
+  }
+
   onContact(): void {
     document.getElementById('dialog')?.classList.remove('hide');
   }

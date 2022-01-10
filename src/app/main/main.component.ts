@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Step } from '../models/step.model';
 import { StepsService } from '../services/steps.service';
 
@@ -10,13 +11,19 @@ import { StepsService } from '../services/steps.service';
 })
 export class MainComponent implements OnInit {
 
+  private sub!: Subscription;
+
   myObserver = { next: (id: number) => this.loadBackgroundImage(id) };
 
   constructor(private stepsservice: StepsService, private router: Router) { }
 
   ngOnInit(): void {
     this.router.navigate(['/story']);
-    this.stepsservice.subject.subscribe(this.myObserver);
+    this.sub = this.stepsservice.subject.subscribe(this.myObserver);
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   loadBackgroundImage(id: number) {

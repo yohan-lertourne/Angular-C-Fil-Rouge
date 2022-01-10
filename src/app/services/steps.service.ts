@@ -113,7 +113,7 @@ export class StepsService {
         },
         {
             id: 4,
-            death: "Vous attendez toute la journée, jamais elle ne se libère. Vous repartez chez vous, dégouter de ne pas avoir réussi à avoir LA place.",
+            death: "Vous attendez toute la journée, jamais elle ne se libère. Vous repartez chez vous, dégouté de ne pas avoir réussi à avoir LA place.",
             safe: "Vous avez beaucoup de chance aujourd'hui: la place se libère juste devant vous. ",
             additional: "Vous faites plusieurs fois le tour du quartier, pour finalement vous garer sur la place libre que vous aviez vu car il n'y a aucune autre place de libre. ",
             story: "Vous prenez votre café, mais vous arrivez un peu en retard dans la salle. Johann, le formateur, se tient devant vous, bras croisé, et vous demande la raison de votre retard. Que lui répondez-vous ?",
