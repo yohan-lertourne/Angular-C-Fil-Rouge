@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Step } from 'src/app/models/step.model';
 import { StepsService } from 'src/app/services/steps.service';
 
@@ -18,6 +19,8 @@ export class TimelineComponent implements OnInit {
   timeline!: HTMLElement;
   timeline_icon!: HTMLImageElement;
 
+  private sub!: Subscription;
+
   myObserver = {
     next: ((id: number) => {
       this.id = id;
@@ -33,12 +36,16 @@ export class TimelineComponent implements OnInit {
     this.setInitialTimes();
     this.timeline = document.getElementsByClassName('timeline')[0] as HTMLElement;
     this.timeline_icon = document.getElementsByClassName('timeline_icon')[0] as HTMLImageElement;
-    this.stepsservice.subject.subscribe(this.myObserver);
+    this.sub = this.stepsservice.subject.subscribe(this.myObserver);
     window.addEventListener('resize', () => {
       this.timeline_icon.classList.add('timeline_icon_window_resize');
       this.changeIconPosition();
       setTimeout(() => this.timeline_icon.classList.remove('timeline_icon_window_resize'), 100);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
   parseTime(str: string): number {
