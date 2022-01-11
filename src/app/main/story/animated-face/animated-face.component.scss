@@ -7,11 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width:700px) {
-    min-width: 2em;
-    min-height: 2em;
-    width: 5em;
-    height: 5em;
+  @media screen and (max-width:900px) {
+    display: none;
   }
   .head {
     position: relative;
@@ -29,20 +26,11 @@
   border: 0.15em solid var(--color-2);
   border-radius: 0.1em;
   background-color: var(--color-3);
-  @media screen and (max-width:700px) {
-    top: 38%;
-  }
   &--left {
     left: -8%;
-    @media screen and (max-width:700px) {
-      left: -11%;
-    }
   }
   &--right {
     right: -14%;
-    @media screen and (max-width:700px) {
-      right: -30%;
-    }
   }
   &__inner {
     position: absolute;
