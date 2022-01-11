@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Step } from '../models/step.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
 export class StepsService {
+
+    constructor(private httpClient: HttpClient) {}
 
     subject = new Subject<number>();
     
@@ -365,4 +368,8 @@ export class StepsService {
             choices: []
         }
     ];  
+
+    public getAPI() {
+        return this.httpClient.get(`https://localhost:7027/api/Steps/2`);
+    }
 }
