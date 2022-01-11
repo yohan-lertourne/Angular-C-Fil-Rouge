@@ -26,6 +26,10 @@ export class TextComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
+
   writeText(): void {
     this.container.innerHTML = '';
     this.index = 0;
@@ -35,5 +39,12 @@ export class TextComponent implements OnInit {
         this.container.innerHTML += this.text[this.index++];
       }
     }, 42);
+  }
+
+  onWriteAll(): void {
+    clearInterval(this.timer);
+    while (this.index < this.text.length) {
+      this.container.innerHTML += this.text[this.index++];
+    }
   }
 }
