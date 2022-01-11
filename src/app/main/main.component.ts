@@ -22,7 +22,7 @@ export class MainComponent implements OnInit {
     this.sub = this.stepsservice.subject.subscribe(this.myObserver);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 
