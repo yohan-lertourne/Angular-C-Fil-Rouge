@@ -5,21 +5,39 @@
     padding: 3%;
     border-radius: 35px;
     background-color: var(--color-5);
+    @media screen and (max-width: 900px) {
+        padding: 5%;
+        border-radius: var(--borderRadius);
+    }
     p {
-        font-family: var(--font-P);
+        font-family: var(--font-p);
         font-size: 1.6em;
         line-height: 1.25em;
         color: var(--white);
         text-align: justify;
+        @media screen and (max-width: 900px) {
+            font-size: 0.9em;
+        }
         &:before {
-            content: '';
             position: absolute;
-            top: 2.5m;
+            top: .25em;
             left: -1em;
             border-top: 20px solid transparent;
             border-right: 20px solid var(--color-5);
             border-bottom: 20px solid var(--color-5);
             border-left: 20px solid transparent;
+            content: '';
+            @media screen and (max-width: 1200px) {
+                top: .5em;
+                left: -0.9em;
+                border-top: 15px solid transparent;
+                border-right: 15px solid var(--color-5);
+                border-bottom: 15px solid var(--color-5);
+                border-left: 15px solid transparent;
+            }
+            @media screen and (max-width: 900px) {
+                display: none;
+            }
         }
     }
 }

@@ -4,32 +4,31 @@
 @import url('./reset.scss');
 :root {
     --url-font-1: url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap');
-    --font-1:var(--url-font-1)'Libre Baskerville', serif;
-    --font-2:'Time New Roman' ;
-    --font-P:'Dancing Script', cursive;
+    --font-1: var(--url-font-1)'Libre Baskerville', serif;
+    --font-2: 'Time New Roman' ;
+    --font-p: 'Dancing Script', cursive;
     
-    --color-1:#1A4E78;
-    --color-2:#81C3F9;
-    --color-3:#36A1F7;
-    --color-4:#004780;
-    --color-5:#2B7FC4;
-    --color-modal-b:#36A1F7;
+    --font-size-h1: 1.6em;
+    --font-size-h1-mobile: 1em;
+    --font-size-h2-mobile: 1em;
+    --font-size-p: 1.5em;
+    --font-size-p-mobile: 1em;
+    --font-size-p-mobile: 0.9em;
+    --font-size-p-mobile-modal: 0.9em;
+    --font-size-button: 0.7em;
 
-    --font-size-h1:1.6em;
-    --font-size-h1-mobile:1em;
-    --font-size-p-mobile:1em;
-    --font-size-li-a-mobile:0.9em;
-    --font-size-h2-mobile:1em;
-    --font-size-p-mobile-modal:0.9em;
-    --font-size-p:1.5em;
-    --font-size-button:0.7em;
+    --color-1: #1A4E78;
+    --color-2: #81C3F9;
+    --color-3: #36A1F7;
+    --color-4: #004780;
+    --color-5: #2B7FC4;
+    --color-modal-b: #36A1F7;
+    --white: whitesmoke;
+
+    --borderRadius: 5px;
   
     --icon-size: 5%;
     --transition-duration : 2s;
-
-    --borderRadius:5px;
-    --height-nav-mobile:6vh;
-    --white: whitesmoke;
 }
 
 html, body, .root, .main {
