@@ -1,0 +1,23 @@
+@keyframes fade {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.timeline {
+    margin: 1.5% 0.5%;
+    padding: 1%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    &_icon {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        transition: transform var(--transition-duration) ease-in-out;
+        &_fade {
+            animation: fade var(--transition-duration) linear;
+        }
+        &_window_resize {
+            transition: none;
+        }
+    }
+}

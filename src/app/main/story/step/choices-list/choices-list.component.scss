@@ -1,0 +1,9 @@
+.choice-list {
+    width: 95%;
+    margin: auto;
+    app-choice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

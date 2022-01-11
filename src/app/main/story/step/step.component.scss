@@ -1,0 +1,6 @@
+.step {
+    margin-left: 5%;
+    @media screen and (max-width: 900px) {
+        margin-left: 0;
+    }
+}

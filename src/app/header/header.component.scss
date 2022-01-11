@@ -1,0 +1,31 @@
+nav {
+    padding: 1% 2%;
+    background-color: var(--color-4);
+    font-family: var(--font-1);
+    display: flex;
+    justify-content: space-around;
+    p {
+        padding: 0.2em 0.4em;
+        border: 0.25em solid var(--color-5);
+        font-size: var(--font-size-p);
+        color: var(--color-3);
+        cursor: pointer;
+        @media screen and (max-width: 900px) {
+            font-size: var(--font-size-p-mobile);
+        } 
+        &:hover {
+            background-color: var(--color-3);
+            border-color: var(--color-3);
+            color: var(--white);
+        }
+    }
+    h1 {
+        align-self: center;
+        font-size: var(--font-size-h1);
+        font-weight: bold;
+        color: var(--white);
+        @media screen and (max-width: 900px) {
+            font-size: var(--font-size-h1-mobile);
+        }
+    }
+}

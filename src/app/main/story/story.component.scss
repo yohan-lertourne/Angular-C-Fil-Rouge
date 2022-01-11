@@ -1,0 +1,11 @@
+.story {
+    width: 60%;
+    margin: 1.5% auto;
+    padding: 2%;
+    border-radius: var(--borderRadius);
+    background-color: var(--color-4);
+    display: flex;
+    @media screen and (max-width: 900px) {
+        width: 80%;
+    }
+}

@@ -1,0 +1,49 @@
+.c-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  transition: .2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.hide {
+    display: none;
+  }
+  .c-dialog__box {
+    min-height: 30%;
+    padding: 1.4em;
+    border-radius: 10px;
+    background-color: var(--color-modal-b);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    button {
+      @media screen and (max-width: 900px) {
+        font-size: var(--font-size-button);
+      }
+    }
+    #modal-close {
+      align-self: flex-end;
+    }
+    #dialog-title {
+      margin-top: 1%;
+      margin-bottom: 2%;
+      font-family: var(--font-p);
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var(--white);
+      @media screen and (max-width: 900px) {
+        font-size: var(--font-size-h2-mobile);
+      }
+    }
+    p {
+      @media screen and (max-width: 900px) {
+        font-size: var(--font-size-p-mobile-modal);
+      }
+    }
+  }
+}
