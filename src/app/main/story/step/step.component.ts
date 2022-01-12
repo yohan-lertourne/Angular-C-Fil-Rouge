@@ -39,7 +39,10 @@ export class StepComponent implements OnInit {
         let choices_tab: string[] = data.choices.split(',');
         choices_tab.forEach((element) => {
           this.StepsService.getAPIChoice(+element).subscribe((data: any) => {
-            this.choices.push(data);
+            let choice = new Choice();
+            choice.id = data.choiceId;
+            choice.text = data.text;
+            this.choices.push(choice);
           });
         });
         if (params['additional']) {
