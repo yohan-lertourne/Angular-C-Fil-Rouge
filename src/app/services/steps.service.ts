@@ -1,16 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Step } from '../models/step.model';
-
-
-const httpOptions = {
-    headers: new HttpHeaders(
-        {
-            'Content-Type': 'application/json',
-        }
-    )
-};
 
 @Injectable({
     providedIn: 'root'
@@ -29,23 +20,23 @@ export class StepsService {
         return step;
     }
 
-    getAPIStep(id: number): Observable<any> {
+    getAPIStep(id: number): Observable<Object> {
         return this.httpClient.get(`https://localhost:7027/api/Steps/${id}`);
     }
 
-    getAPIChoice(id: number): Observable<any> {
+    getAPIChoice(id: number): Observable<Object> {
         return this.httpClient.get(`https://localhost:7027/api/Choices/${id}`);
     }
 
-    getAPITheme(id: number): Observable<any>{
+    getAPITheme(id: number): Observable<Object> {
         return this.httpClient.get(`https://localhost:7027/api/Themes/${id}`);
     }
 
-    getAPIIcon(id: number): Observable<any> {
+    getAPIIcon(id: number): Observable<Object> {
         return this.httpClient.get(`https://localhost:7027/api/Icons/${id}`);
     }
 
-    getAPIUser(id: number): Observable<any> {
+    getAPIUser(id: number): Observable<Object> {
         return this.httpClient.get(`https://localhost:7027/api/Users/${id}`);
     }
 
