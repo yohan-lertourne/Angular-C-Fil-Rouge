@@ -54,12 +54,14 @@ export class TimelineComponent implements OnInit {
     return parseInt(tab[0]) + parseInt(tab[1]) / 60;
   }
 
-  setInitialTimes(): void {////
-    let steps = this.stepsservice.steps;
-    let debut = steps[0].hour;
-    let fin = steps[steps.length - 1].hour;
-    this.start_time = this.parseTime(`${debut.getHours()}:${debut.getMinutes()}`);
-    this.total_duration = this.parseTime(`${fin.getHours()}:${fin.getMinutes()}`) - this.start_time;
+  setInitialTimes(): void {
+    let steps = this.stepsservice.getAPISteps();
+    steps.subscribe((data: any) => {
+      let debut = new Date(data[0].hour);
+      let fin = new Date(data[data.length - 1].hour);
+      this.start_time = this.parseTime(`${debut.getHours()}:${debut.getMinutes()}`);
+      this.total_duration = this.parseTime(`${fin.getHours()}:${fin.getMinutes()}`) - this.start_time;
+    });
   }
 
   loadIcon(is_fading: boolean): void {
