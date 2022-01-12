@@ -19,8 +19,6 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.router.navigate(['/story']);
     this.sub = this.stepsservice.subject.subscribe(this.myObserver);
-    console.log(this.stepsservice.getAPISteps());
-     this.getStep(); 
   }
 
   ngOnDestroy(): void {
