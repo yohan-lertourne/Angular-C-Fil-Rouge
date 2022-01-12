@@ -34,19 +34,19 @@ export class StepsService {
     }
 
     getAPIChoice(id: number): Observable<any> {
-        return this.httpClient.get(`https://localhost:7027/api/Choice/${id}`);
+        return this.httpClient.get(`https://localhost:7027/api/Choices/${id}`);
     }
 
-    getAPITheme(id: number): Observable<any> {
-        return this.httpClient.get(`https://localhost:7027/api/Theme/${id}`);
+    getAPITheme(id: number): Observable<any>{
+        return this.httpClient.get(`https://localhost:7027/api/Themes/${id}`);
     }
 
     getAPIIcon(id: number): Observable<any> {
-        return this.httpClient.get(`https://localhost:7027/api/Icon/${id}`);
+        return this.httpClient.get(`https://localhost:7027/api/Icons/${id}`);
     }
 
     getAPIUser(id: number): Observable<any> {
-        return this.httpClient.get(`https://localhost:7027/api/User/${id}`);
+        return this.httpClient.get(`https://localhost:7027/api/Users/${id}`);
     }
 
     steps: Step[] = [

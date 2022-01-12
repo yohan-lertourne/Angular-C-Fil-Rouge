@@ -28,7 +28,13 @@ export class MainComponent implements OnInit {
 
   loadBackgroundImage(id: number) {
     let main = document.getElementsByClassName('main')[0] as HTMLElement;
-    let step = this.stepsservice.getStepById(id) as Step;
-    main.style.backgroundImage = `url(${step.theme.background})`;
+    let step = this.stepsservice.getAPIStep(id);
+    step.subscribe((data:any) =>{
+      let theme = this.stepsservice.getAPITheme(data.themes);
+      theme.subscribe((data:any) => {
+        main.style.backgroundImage = `url(${data.background})`;
+      })
+      
+    })
   }
 }
