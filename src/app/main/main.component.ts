@@ -20,7 +20,7 @@ export class MainComponent implements OnInit {
     this.router.navigate(['/story']);
     this.sub = this.stepsservice.subject.subscribe(this.myObserver);
     console.log(this.stepsservice.getAPISteps());
-    /* this.getStep(); */
+     this.getStep(); 
   }
 
   ngOnDestroy(): void {
@@ -33,11 +33,13 @@ export class MainComponent implements OnInit {
     main.style.backgroundImage = `url(${step.theme.background})`;
   }
 
+  stock:any;
   getStep(){
     this.stepsservice.getAPIStep(2).subscribe((data:any)=>{
         this.step = data;
-        console.log('data',this.step.death);
-        
+        this.stock = this.step.death;
+        console.log('data',this.stock);       
     })
   }
+
 }
