@@ -1,20 +1,60 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observer, Subject } from 'rxjs';
 import { Step } from '../models/step.model';
+
+
+const httpOptions = {
+    headers: new HttpHeaders(
+        {
+            'Content-Type': 'application/json',
+        }
+    )
+};
 
 @Injectable({
     providedIn: 'root'
 })
 export class StepsService {
 
+    steps2!: object[];
+
     subject = new Subject<number>();
-    
+
+    constructor(private http: HttpClient) { }
+
     getStepById(id: number): Step | null {
         let step: Step | null = null;
         this.steps.forEach((element: Step) => {
             if (element.id === id) step = element;
         });
         return step;
+    }
+
+    /* getStepById(id: number): Step | null {
+        let step: Step | null = null;
+
+        return step;
+    } */
+
+    getAPIStepById(id: number) {
+
+        /* this.http.get(`https://localhost:7027/api/Steps/${id}`, httpOptions).subscribe((element: any) => {
+            step = element
+        });
+        return step; */
+    }
+
+    getAPISteps(): object[] {
+        let steps: object[] = [];
+        this.http.get('https://localhost:7027/api/Steps', httpOptions).subscribe((elements: any) => {
+            elements.forEach((element: object) => {
+                steps.push(element);
+            });
+        })
+        console.log(steps[0]);
+        
+        return steps;
     }
 
     steps: Step[] = [
@@ -364,5 +404,5 @@ export class StepsService {
             },
             choices: []
         }
-    ];  
+    ];
 }
