@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { Step } from 'src/app/models/step.model';
 import { StepsService } from 'src/app/services/steps.service';
 
 @Component({
