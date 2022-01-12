@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observer, Subject } from 'rxjs';
 import { Step } from '../models/step.model';
-import { HttpClient } from '@angular/common/http';
 
 
 const httpOptions = {
@@ -22,7 +21,7 @@ export class StepsService {
 
     subject = new Subject<number>();
 
-    constructor(private http: HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 
     getStepById(id: number): Step | null {
         let step: Step | null = null;
@@ -40,15 +39,15 @@ export class StepsService {
 
     getAPIStepById(id: number) {
 
-        /* this.http.get(`https://localhost:7027/api/Steps/${id}`, httpOptions).subscribe((element: any) => {
-            step = element
+         this.httpClient.get(`https://localhost:7027/api/Steps/${id}`, httpOptions).subscribe((element: any) => {
+            this.steps2 = element
         });
-        return step; */
+        return this.steps2; 
     }
 
     getAPISteps(): object[] {
         let steps: object[] = [];
-        this.http.get('https://localhost:7027/api/Steps', httpOptions).subscribe((elements: any) => {
+        this.httpClient.get('https://localhost:7027/api/Steps', httpOptions).subscribe((elements: any) => {
             elements.forEach((element: object) => {
                 steps.push(element);
             });

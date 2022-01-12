@@ -13,7 +13,6 @@ import { AnimatedFaceComponent } from './main/story/animated-face/animated-face.
 import { ContactComponent } from './main/contact/contact.component';
 import { TextComponent } from './main/story/step/text/text.component';
 import { StepComponent } from './main/story/step/step.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
