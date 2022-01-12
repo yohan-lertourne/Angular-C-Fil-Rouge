@@ -57,6 +57,25 @@ export class StepsService {
         return steps;
     }
 
+    getAPIStep(id:number): Observable<any>{
+        return this.httpClient.get(`https://localhost:7027/api/Steps/${id}`);
+    }
+
+    getAPIChoice(id:number) :Observable<any>{
+        return this.httpClient.get(`https://localhost:7027/api/Choice/${id}`);
+    }
+
+    getAPITheme(id:number): Observable<any>{
+        return this.httpClient.get(`https://localhost:7027/api/Theme/${id}`);
+    }
+
+    getAPIIcon(id:number) :Observable<any>{
+        return this.httpClient.get(`https://localhost:7027/api/Icon/${id}`);
+    }
+
+    getAPIUser(id:number): Observable<any> {
+        return this.httpClient.get(`https://localhost:7027/api/User/${id}`);
+    }
     steps: Step[] = [
         {
             id: 1,
@@ -406,23 +425,5 @@ export class StepsService {
         }
     ];  
 
-    getAPIStep(id:number): Observable<any>{
-        return this.httpClient.get(`https://localhost:7027/api/Steps/${id}`);
-    }
 
-    getAPIChoice(id:number) :Observable<any>{
-        return this.httpClient.get(`https://localhost:7027/api/Choice/${id}`);
-    }
-
-    getAPITheme(id:number): Observable<any>{
-        return this.httpClient.get(`https://localhost:7027/api/Theme/${id}`);
-    }
-
-    getAPIIcon(id:number) :Observable<any>{
-        return this.httpClient.get(`https://localhost:7027/api/Icon/${id}`);
-    }
-
-    getAPIUser(id:number): Observable<any> {
-        return this.httpClient.get(`https://localhost:7027/api/User/${id}`);
-    }
 }
