@@ -28,7 +28,7 @@ export class ChoiceComponent implements OnInit {
         break;
       case 0:
         if (this.getRandomInt(2) === 0) {
-          this.StepsService.subject.next(666);
+          this.StepsService.subject.next(12);
           this.router.navigate(['/story/steps/', next_id, { death: true }]);
         } else {
           this.StepsService.subject.next(next_id);

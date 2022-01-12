@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Step } from 'src/app/models/step.model';
 import { StepsService } from 'src/app/services/steps.service';
 
@@ -11,7 +11,7 @@ import { StepsService } from 'src/app/services/steps.service';
 export class TimelineComponent implements OnInit {
 
   id!: number;
-  step!: Step;
+  step!: Observable<Object>;
 
   start_time!: number;
   total_duration!: number;
@@ -24,7 +24,8 @@ export class TimelineComponent implements OnInit {
   myObserver = {
     next: ((id: number) => {
       this.id = id;
-      this.step = this.stepsservice.getStepById(id) as Step;
+      this.step = this.stepsservice.getAPIStep(id);
+      /* this.step = this.stepsservice.getStepById(id) as Step; */
       this.changeIconPosition();
       this.loadIcon(id !== 1);
     })
@@ -54,28 +55,40 @@ export class TimelineComponent implements OnInit {
   }
 
   setInitialTimes(): void {
-    let steps = this.stepsservice.steps;
-    let debut = steps[0].hour;
-    let fin = steps[steps.length - 1].hour;
-    this.start_time = this.parseTime(`${debut.getHours()}:${debut.getMinutes()}`);
-    this.total_duration = this.parseTime(`${fin.getHours()}:${fin.getMinutes()}`) - this.start_time;
+    let steps = this.stepsservice.getAPISteps();
+    steps.subscribe((data: any) => {
+      let debut = new Date(data[0].hour);
+      let fin = new Date(data[data.length - 1].hour);
+      this.start_time = this.parseTime(`${debut.getHours()}:${debut.getMinutes()}`);
+      this.total_duration = this.parseTime(`${fin.getHours()}:${fin.getMinutes()}`) - this.start_time;
+    });
   }
 
   loadIcon(is_fading: boolean): void {
-    let icon = this.step.theme.icon;
-    this.timeline_icon.alt = icon.alt;
-    this.timeline_icon.setAttribute('author', icon.author);
-    if (is_fading) {
-      this.timeline_icon.classList.add('timeline_icon_fade');
-      setTimeout(() => this.timeline_icon.src = icon.src, 1000);
-      setTimeout(() => this.timeline_icon.classList.remove('timeline_icon_fade'), 2000);
-    }
-    else this.timeline_icon.src = icon.src;
+    this.step.subscribe((data: any) => {
+      let theme = this.stepsservice.getAPITheme(data.themes);
+      theme.subscribe((data: any) => {
+        let icon = this.stepsservice.getAPIIcon(data.icons);
+        icon.subscribe((data: any) => {
+          this.timeline_icon.alt = data.alt;
+          this.timeline_icon.setAttribute('author', data.author);
+          if (is_fading) {
+            this.timeline_icon.classList.add('timeline_icon_fade');
+            setTimeout(() => this.timeline_icon.src = data.src, 1000);
+            setTimeout(() => this.timeline_icon.classList.remove('timeline_icon_fade'), 2000);
+          }
+          else this.timeline_icon.src = data.src;
+        });
+      });
+    });
   }
 
   changeIconPosition(): void {
-    let time = this.parseTime(`${this.step.hour.getHours()}:${this.step.hour.getMinutes()}`) - this.start_time;
-    let icon_position = (this.timeline.offsetWidth - this.timeline_icon.offsetWidth - parseInt(getComputedStyle(this.timeline).padding.split('px')[0]) * 2) * (time / this.total_duration);
-    this.timeline_icon.style.transform = `translate(${icon_position}px)`;
+    this.step.subscribe((data: any) => {
+      let hour = new Date(data.hour);
+      let time = this.parseTime(`${hour.getHours()}:${hour.getMinutes()}`) - this.start_time;
+      let icon_position = (this.timeline.offsetWidth - this.timeline_icon.offsetWidth - parseInt(getComputedStyle(this.timeline).padding.split('px')[0]) * 2) * (time / this.total_duration);
+      this.timeline_icon.style.transform = `translate(${icon_position}px)`;
+    });
   }
 }
