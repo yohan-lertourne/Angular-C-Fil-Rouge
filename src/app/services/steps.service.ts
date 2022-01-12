@@ -369,7 +369,24 @@ export class StepsService {
         }
     ];  
 
-    public getAPI() {
-        return this.httpClient.get(`https://localhost:7027/api/Steps/2`);
+    public getAPIStep(id:number) {
+        return this.httpClient.get(`https://localhost:7027/api/Steps/${id}`);
     }
+
+    public getAPIChoice(id:number) {
+        return this.httpClient.get(`https://localhost:7027/api/Choice/${id}`);
+    }
+
+    public getAPITheme(id:number) {
+        return this.httpClient.get(`https://localhost:7027/api/Theme/${id}`);
+    }
+
+    public getAPIIcon(id:number) {
+        return this.httpClient.get(`https://localhost:7027/api/Icon/${id}`);
+    }
+
+    public getAPIUser(id:number) {
+        return this.httpClient.get(`https://localhost:7027/api/User/${id}`);
+    }
+
 }
