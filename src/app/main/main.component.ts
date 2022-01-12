@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Step } from '../models/step.model';
 import { StepsService } from '../services/steps.service';
 
 @Component({
