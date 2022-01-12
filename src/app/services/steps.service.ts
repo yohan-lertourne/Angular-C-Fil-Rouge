@@ -12,13 +12,13 @@ export class StepsService {
 
     constructor(private httpClient: HttpClient) { }
 
-    getStepById(id: number): Step | null {
+    /* getStepById(id: number): Step | null {
         let step: Step | null = null;
         this.steps.forEach((element: Step) => {
             if (element.id === id) step = element;
         });
         return step;
-    }
+    } */
 
     getAPISteps(): Observable<Object> {
         return this.httpClient.get('https://localhost:7027/api/Steps');
@@ -44,7 +44,7 @@ export class StepsService {
         return this.httpClient.get(`https://localhost:7027/api/Users/${id}`);
     }
 
-    steps: Step[] = [
+    /* steps: Step[] = [
         {
             id: 1,
             death: "",
@@ -391,5 +391,5 @@ export class StepsService {
             },
             choices: []
         }
-    ];
+    ]; */
 }
