@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
       theme.subscribe((data:any) => {
         main.style.backgroundImage = `url(${data.background})`;
       })
-      
+
     })
   }
 }
