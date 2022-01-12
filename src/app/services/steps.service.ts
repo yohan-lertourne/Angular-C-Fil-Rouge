@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observer, Subject } from 'rxjs';
+import { Observable, Observer, Subject } from 'rxjs';
 import { Step } from '../models/step.model';
 
 
@@ -406,23 +406,23 @@ export class StepsService {
         }
     ];  
 
-    public getAPIStep(id:number) {
+    getAPIStep(id:number): Observable<any>{
         return this.httpClient.get(`https://localhost:7027/api/Steps/${id}`);
     }
 
-    public getAPIChoice(id:number) {
+    getAPIChoice(id:number) :Observable<any>{
         return this.httpClient.get(`https://localhost:7027/api/Choice/${id}`);
     }
 
-    public getAPITheme(id:number) {
+    getAPITheme(id:number): Observable<any>{
         return this.httpClient.get(`https://localhost:7027/api/Theme/${id}`);
     }
 
-    public getAPIIcon(id:number) {
+    getAPIIcon(id:number) :Observable<any>{
         return this.httpClient.get(`https://localhost:7027/api/Icon/${id}`);
     }
 
-    public getAPIUser(id:number) {
+    getAPIUser(id:number): Observable<any> {
         return this.httpClient.get(`https://localhost:7027/api/User/${id}`);
     }
 }
