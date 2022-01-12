@@ -44,4 +44,6 @@ export class StepComponent implements OnInit {
       this.text = this.step.story;
     }
   }
+
+  
 }
