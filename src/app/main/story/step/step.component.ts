@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Choice } from 'src/app/models/choice.model';
-import { Step } from 'src/app/models/step.model';
 import { StepsService } from 'src/app/services/steps.service';
 
 @Component({
