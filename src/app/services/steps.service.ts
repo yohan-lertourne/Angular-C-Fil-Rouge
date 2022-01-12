@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, Observer, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Step } from '../models/step.model';
 
 
@@ -17,8 +17,6 @@ const httpOptions = {
 })
 export class StepsService {
 
-    steps2!: object[];
-
     subject = new Subject<number>();
 
     constructor(private httpClient: HttpClient) { }
@@ -31,51 +29,26 @@ export class StepsService {
         return step;
     }
 
-    /* getStepById(id: number): Step | null {
-        let step: Step | null = null;
-
-        return step;
-    } */
-
-    getAPIStepById(id: number) {
-
-         this.httpClient.get(`https://localhost:7027/api/Steps/${id}`, httpOptions).subscribe((element: any) => {
-            this.steps2 = element
-        });
-        return this.steps2; 
-    }
-
-    getAPISteps(): object[] {
-        let steps: object[] = [];
-        this.httpClient.get('https://localhost:7027/api/Steps', httpOptions).subscribe((elements: any) => {
-            elements.forEach((element: object) => {
-                steps.push(element);
-            });
-        })
-        console.log(steps[0]);
-        
-        return steps;
-    }
-
-    getAPIStep(id:number): Observable<any>{
+    getAPIStep(id: number): Observable<any> {
         return this.httpClient.get(`https://localhost:7027/api/Steps/${id}`);
     }
 
-    getAPIChoice(id:number) :Observable<any>{
+    getAPIChoice(id: number): Observable<any> {
         return this.httpClient.get(`https://localhost:7027/api/Choice/${id}`);
     }
 
-    getAPITheme(id:number): Observable<any>{
+    getAPITheme(id: number): Observable<any> {
         return this.httpClient.get(`https://localhost:7027/api/Theme/${id}`);
     }
 
-    getAPIIcon(id:number) :Observable<any>{
+    getAPIIcon(id: number): Observable<any> {
         return this.httpClient.get(`https://localhost:7027/api/Icon/${id}`);
     }
 
-    getAPIUser(id:number): Observable<any> {
+    getAPIUser(id: number): Observable<any> {
         return this.httpClient.get(`https://localhost:7027/api/User/${id}`);
     }
+
     steps: Step[] = [
         {
             id: 1,
@@ -423,7 +396,5 @@ export class StepsService {
             },
             choices: []
         }
-    ];  
-
-
+    ];
 }
