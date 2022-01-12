@@ -10,8 +10,9 @@ import { StepsService } from '../services/steps.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  step :any;
+
   private sub!: Subscription;
+
   myObserver = { next: (id: number) => this.loadBackgroundImage(id) };
 
   constructor(private stepsservice: StepsService, private router: Router) { }
@@ -30,14 +31,4 @@ export class MainComponent implements OnInit {
     let step = this.stepsservice.getStepById(id) as Step;
     main.style.backgroundImage = `url(${step.theme.background})`;
   }
-
-  stock:any;
-  getStep(){
-    this.stepsservice.getAPIStep(2).subscribe((data:any)=>{
-        this.step = data;
-        this.stock = this.step.death;
-        console.log('data',this.stock);       
-    })
-  }
-
 }
