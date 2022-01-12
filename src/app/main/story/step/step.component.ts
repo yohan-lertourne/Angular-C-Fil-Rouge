@@ -18,7 +18,7 @@ export class StepComponent implements OnInit {
 
   private sub!: Subscription;
 
-  constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute,) { }
+  constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.StepsService.subject.next(1);
