@@ -20,6 +20,10 @@ export class StepsService {
         return step;
     }
 
+    getAPISteps(): Observable<Object> {
+        return this.httpClient.get('https://localhost:7027/api/Steps');
+    }
+
     getAPIStep(id: number): Observable<Object> {
         return this.httpClient.get(`https://localhost:7027/api/Steps/${id}`);
     }
