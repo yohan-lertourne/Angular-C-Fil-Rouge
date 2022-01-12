@@ -1,16 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Step } from '../models/step.model';
-
-
-const httpOptions = {
-    headers: new HttpHeaders(
-        {
-            'Content-Type': 'application/json',
-        }
-    )
-};
 
 @Injectable({
     providedIn: 'root'
@@ -37,7 +28,7 @@ export class StepsService {
         return this.httpClient.get(`https://localhost:7027/api/Choices/${id}`);
     }
 
-    getAPITheme(id: number): Observable<any>{
+    getAPITheme(id: number): Observable<any> {
         return this.httpClient.get(`https://localhost:7027/api/Themes/${id}`);
     }
 
