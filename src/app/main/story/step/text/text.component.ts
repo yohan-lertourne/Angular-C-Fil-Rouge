@@ -22,7 +22,7 @@ export class TextComponent implements OnInit {
   ngOnInit(): void {
     this.container = document.getElementsByClassName('text')[0].firstElementChild as Element;
     this.sub = this.activeRoute.params.subscribe(() => {
-      setTimeout(() =>this.writeText(), 100);
+      setTimeout(() =>this.writeText(), 200);
     });
   }
 
