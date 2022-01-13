@@ -32,18 +32,19 @@ export class StepComponent implements OnInit {
 
   loadStep(params: Params): void {
     this.choices = [];
-    this.StepsService.getAPIStep(+params['id']).subscribe((data: any) => {
+    let step_sub = this.StepsService.getAPIStep(+params['id']).subscribe((data: any) => {
       if (params['death']) {
         this.text = data.death;
       } else {
         let choices_tab: string[] = data.choices.split(',');
         choices_tab.forEach((element) => {
-          this.StepsService.getAPIChoice(+element).subscribe((data: any) => {
+          let choice_sub = this.StepsService.getAPIChoice(+element).subscribe((data: any) => {
             let choice = new Choice();
             choice.id = data.choiceId;
             choice.text = data.text;
             this.choices.push(choice);
           });
+          choice_sub.unsubscribe();
         });
         if (params['additional']) {
           this.text = data.additional + data.story;
@@ -54,5 +55,6 @@ export class StepComponent implements OnInit {
         }
       }
     });
+    step_sub.unsubscribe();
   }
 }
