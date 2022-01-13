@@ -53,19 +53,18 @@ export class TimelineComponent implements OnInit {
   }
 
   setInitialTimes(): void {
-    let steps_sub = this.stepsservice.getAPISteps().subscribe((data: any) => {
+    this.stepsservice.getAPISteps().subscribe((data: any) => {
       let debut = new Date(data[0].hour);
       let fin = new Date(data[data.length - 1].hour);
       this.start_time = this.parseTime(`${debut.getHours()}:${debut.getMinutes()}`);
       this.total_duration = this.parseTime(`${fin.getHours()}:${fin.getMinutes()}`) - this.start_time;
     });
-    steps_sub.unsubscribe();
   }
 
   loadIcon(is_fading: boolean): void {
-    let step_sub = this.step.subscribe((data: any) => {
-      let theme_sub = this.stepsservice.getAPITheme(data.themes).subscribe((data: any) => {
-        let icon_sub = this.stepsservice.getAPIIcon(data.icons).subscribe((data: any) => {
+    this.step.subscribe((data: any) => {
+      this.stepsservice.getAPITheme(data.themes).subscribe((data: any) => {
+        this.stepsservice.getAPIIcon(data.icons).subscribe((data: any) => {
           this.timeline_icon.alt = data.alt;
           this.timeline_icon.setAttribute('author', data.author);
           if (is_fading) {
@@ -75,20 +74,16 @@ export class TimelineComponent implements OnInit {
           }
           else this.timeline_icon.src = data.src;
         });
-        icon_sub.unsubscribe();
       });
-      theme_sub.unsubscribe();
     });
-    step_sub.unsubscribe();
   }
 
   changeIconPosition(): void {
-    let step_sub = this.step.subscribe((data: any) => {
+    this.step.subscribe((data: any) => {
       let hour = new Date(data.hour);
       let time = this.parseTime(`${hour.getHours()}:${hour.getMinutes()}`) - this.start_time;
       let icon_position = (this.timeline.offsetWidth - this.timeline_icon.offsetWidth - parseInt(getComputedStyle(this.timeline).padding.split('px')[0]) * 2) * (time / this.total_duration);
       this.timeline_icon.style.transform = `translate(${icon_position}px)`;
     });
-    step_sub.unsubscribe();
   }
 }
