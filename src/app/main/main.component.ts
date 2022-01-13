@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { Step } from '../models/step.model';
 import { StepsService } from '../services/steps.service';
 
 @Component({
@@ -26,9 +25,12 @@ export class MainComponent implements OnInit {
     this.sub.unsubscribe();
   }
 
-  loadBackgroundImage(id: number) {
+  loadBackgroundImage(id: number): void {
     let main = document.getElementsByClassName('main')[0] as HTMLElement;
-    let step = this.stepsservice.getStepById(id) as Step;
-    main.style.backgroundImage = `url(${step.theme.background})`;
+    this.stepsservice.getAPIStep(id).subscribe((data: any) => {
+      this.stepsservice.getAPITheme(data.themes).subscribe((data: any) => {
+        main.style.backgroundImage = `url(${data.background})`;
+      });
+    });
   }
 }

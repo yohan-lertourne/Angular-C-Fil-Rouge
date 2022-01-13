@@ -16,7 +16,7 @@ export class ChoiceComponent implements OnInit {
   constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.rank = this.choice.id%3;
+    this.rank = this.choice.id % 3;
   }
 
   onChoice(): void {
@@ -28,7 +28,7 @@ export class ChoiceComponent implements OnInit {
         break;
       case 0:
         if (this.getRandomInt(2) === 0) {
-          this.StepsService.subject.next(666);
+          this.StepsService.subject.next(12);
           this.router.navigate(['/story/steps/', next_id, { death: true }]);
         } else {
           this.StepsService.subject.next(next_id);

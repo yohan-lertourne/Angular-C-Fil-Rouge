@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-import { Step } from '../models/step.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -8,16 +8,42 @@ import { Step } from '../models/step.model';
 export class StepsService {
 
     subject = new Subject<number>();
-    
-    getStepById(id: number): Step | null {
+
+    constructor(private httpClient: HttpClient) { }
+
+    getAPISteps(): Observable<Object> {
+        return this.httpClient.get('https://localhost:7027/api/Steps');
+    }
+
+    getAPIStep(id: number): Observable<Object> {
+        return this.httpClient.get(`https://localhost:7027/api/Steps/${id}`);
+    }
+
+    getAPIChoice(id: number): Observable<Object> {
+        return this.httpClient.get(`https://localhost:7027/api/Choices/${id}`);
+    }
+
+    getAPITheme(id: number): Observable<Object> {
+        return this.httpClient.get(`https://localhost:7027/api/Themes/${id}`);
+    }
+
+    getAPIIcon(id: number): Observable<Object> {
+        return this.httpClient.get(`https://localhost:7027/api/Icons/${id}`);
+    }
+
+    getAPIUser(id: number): Observable<Object> {
+        return this.httpClient.get(`https://localhost:7027/api/Users/${id}`);
+    }
+
+    /* getStepById(id: number): Step | null {
         let step: Step | null = null;
         this.steps.forEach((element: Step) => {
             if (element.id === id) step = element;
         });
         return step;
-    }
+    } */
 
-    steps: Step[] = [
+    /* steps: Step[] = [
         {
             id: 1,
             death: "",
@@ -364,5 +390,5 @@ export class StepsService {
             },
             choices: []
         }
-    ];  
+    ]; */
 }

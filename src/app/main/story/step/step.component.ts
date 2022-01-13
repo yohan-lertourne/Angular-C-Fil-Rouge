@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Choice } from 'src/app/models/choice.model';
-import { Step } from 'src/app/models/step.model';
 import { StepsService } from 'src/app/services/steps.service';
 
 @Component({
@@ -12,13 +11,13 @@ import { StepsService } from 'src/app/services/steps.service';
 })
 export class StepComponent implements OnInit {
 
-  step!: Step;
+  step!: Observable<Object>;
   text!: string;
   choices!: Choice[];
 
   private sub!: Subscription;
 
-  constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute,) { }
+  constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.StepsService.subject.next(1);
@@ -32,16 +31,28 @@ export class StepComponent implements OnInit {
   }
 
   loadStep(params: Params): void {
-    this.step = this.StepsService.getStepById(+params['id']) as Step;
-    this.choices = params['death'] ? [] : this.step.choices;
-    if (params['additional']) {
-      this.text = this.step.additional + this.step.story;
-    } else if (params['safe']) {
-      this.text = this.step.safe + this.step.story;
-    } else if (params['death']) {
-      this.text = this.step.death;
-    } else {
-      this.text = this.step.story;
-    }
+    this.choices = [];
+    this.StepsService.getAPIStep(+params['id']).subscribe((data: any) => {
+      if (params['death']) {
+        this.text = data.death;
+      } else {
+        let choices_tab: string[] = data.choices.split(',');
+        choices_tab.forEach((element) => {
+          this.StepsService.getAPIChoice(+element).subscribe((data: any) => {
+            let choice = new Choice();
+            choice.id = data.choiceId;
+            choice.text = data.text;
+            this.choices.push(choice);
+          });
+        });
+        if (params['additional']) {
+          this.text = data.additional + data.story;
+        } else if (params['safe']) {
+          this.text = data.safe + data.story;
+        } else {
+          this.text = data.story;
+        }
+      }
+    });
   }
 }
