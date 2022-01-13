@@ -24,7 +24,6 @@ export class TimelineComponent implements OnInit {
     next: ((id: number) => {
       this.id = id;
       this.step = this.stepsservice.getAPIStep(id);
-      /* this.step = this.stepsservice.getStepById(id) as Step; */
       this.changeIconPosition();
       this.loadIcon(id !== 1);
     })
