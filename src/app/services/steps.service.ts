@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { Step } from '../models/step.model';
 
 @Injectable({
     providedIn: 'root'
@@ -11,14 +10,6 @@ export class StepsService {
     subject = new Subject<number>();
 
     constructor(private httpClient: HttpClient) { }
-
-    /* getStepById(id: number): Step | null {
-        let step: Step | null = null;
-        this.steps.forEach((element: Step) => {
-            if (element.id === id) step = element;
-        });
-        return step;
-    } */
 
     getAPISteps(): Observable<Object> {
         return this.httpClient.get('https://localhost:7027/api/Steps');
@@ -43,6 +34,14 @@ export class StepsService {
     getAPIUser(id: number): Observable<Object> {
         return this.httpClient.get(`https://localhost:7027/api/Users/${id}`);
     }
+
+    /* getStepById(id: number): Step | null {
+        let step: Step | null = null;
+        this.steps.forEach((element: Step) => {
+            if (element.id === id) step = element;
+        });
+        return step;
+    } */
 
     /* steps: Step[] = [
         {

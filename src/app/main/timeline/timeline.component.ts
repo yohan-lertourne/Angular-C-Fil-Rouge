@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { Step } from 'src/app/models/step.model';
 import { StepsService } from 'src/app/services/steps.service';
 
 @Component({
@@ -25,7 +24,6 @@ export class TimelineComponent implements OnInit {
     next: ((id: number) => {
       this.id = id;
       this.step = this.stepsservice.getAPIStep(id);
-      /* this.step = this.stepsservice.getStepById(id) as Step; */
       this.changeIconPosition();
       this.loadIcon(id !== 1);
     })
@@ -55,21 +53,19 @@ export class TimelineComponent implements OnInit {
   }
 
   setInitialTimes(): void {
-    let steps = this.stepsservice.getAPISteps();
-    steps.subscribe((data: any) => {
+    let steps_sub = this.stepsservice.getAPISteps().subscribe((data: any) => {
       let debut = new Date(data[0].hour);
       let fin = new Date(data[data.length - 1].hour);
       this.start_time = this.parseTime(`${debut.getHours()}:${debut.getMinutes()}`);
       this.total_duration = this.parseTime(`${fin.getHours()}:${fin.getMinutes()}`) - this.start_time;
     });
+    steps_sub.unsubscribe();
   }
 
   loadIcon(is_fading: boolean): void {
-    this.step.subscribe((data: any) => {
-      let theme = this.stepsservice.getAPITheme(data.themes);
-      theme.subscribe((data: any) => {
-        let icon = this.stepsservice.getAPIIcon(data.icons);
-        icon.subscribe((data: any) => {
+    let step_sub = this.step.subscribe((data: any) => {
+      let theme_sub = this.stepsservice.getAPITheme(data.themes).subscribe((data: any) => {
+        let icon_sub = this.stepsservice.getAPIIcon(data.icons).subscribe((data: any) => {
           this.timeline_icon.alt = data.alt;
           this.timeline_icon.setAttribute('author', data.author);
           if (is_fading) {
@@ -79,16 +75,20 @@ export class TimelineComponent implements OnInit {
           }
           else this.timeline_icon.src = data.src;
         });
+        icon_sub.unsubscribe();
       });
+      theme_sub.unsubscribe();
     });
+    step_sub.unsubscribe();
   }
 
   changeIconPosition(): void {
-    this.step.subscribe((data: any) => {
+    let step_sub = this.step.subscribe((data: any) => {
       let hour = new Date(data.hour);
       let time = this.parseTime(`${hour.getHours()}:${hour.getMinutes()}`) - this.start_time;
       let icon_position = (this.timeline.offsetWidth - this.timeline_icon.offsetWidth - parseInt(getComputedStyle(this.timeline).padding.split('px')[0]) * 2) * (time / this.total_duration);
       this.timeline_icon.style.transform = `translate(${icon_position}px)`;
     });
+    step_sub.unsubscribe();
   }
 }

@@ -16,7 +16,7 @@ export class ChoiceComponent implements OnInit {
   constructor(private StepsService: StepsService, private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.rank = this.choice.id%3;
+    this.rank = this.choice.id % 3;
   }
 
   onChoice(): void {
